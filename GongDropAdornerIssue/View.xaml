@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="GongDropAdornerIssue.View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dd="urn:gong-wpf-dragdrop"
+             xmlns:local="clr-namespace:GongDropAdornerIssue"
+             dd:DragDrop.IsDragSource="True"
+             dd:DragDrop.DragHandler="{Binding}">
+    <UserControl.DataContext>
+        <local:ViewModel />
+    </UserControl.DataContext>
+    <dd:DragDrop.DragAdornerTemplate>
+        <DataTemplate DataType="local:ViewModel">
+            <Rectangle Fill="Aqua"
+                       Width="{Binding Image.Width}"
+                       Height="94"
+                       Margin="-30 0 0 0" />
+        </DataTemplate>
+    </dd:DragDrop.DragAdornerTemplate>
+    <Rectangle Fill="Brown"
+               Width="94"
+               Height="94" />
+</UserControl>
